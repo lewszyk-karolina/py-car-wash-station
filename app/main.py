@@ -1,7 +1,7 @@
 class Car:
     def __init__(self,
                  comfort_class: int,
-                 clean_mark: float,
+                 clean_mark: int,
                  brand: str
                  ) -> None:
         self.comfort_class = comfort_class
@@ -12,7 +12,7 @@ class Car:
 class CarWashStation:
     def __init__(self,
                  distance_from_city_center: float,
-                 clean_power: float,
+                 clean_power: int,
                  average_rating: float,
                  count_of_ratings: int
                  ) -> None:
@@ -21,7 +21,7 @@ class CarWashStation:
         self.average_rating = average_rating
         self.count_of_ratings = count_of_ratings
 
-    def wash_single_car(self, car: Car) -> bool:
+    def wash_single_car(self, car: Car) -> bool | None:
         if self.clean_power > car.clean_mark:
             car.clean_mark = self.clean_power
             return True
